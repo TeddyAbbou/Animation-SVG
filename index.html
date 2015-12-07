@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" media="screen" title="no title">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta charset="utf-8">
+    <title>SVG</title>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+    $('a[href^="#"]').click(function() {
+    var ou = $(this).attr("href").substr(1);
+    var saut = $("a[name='"+ ou +"']");
+    $('html,body').animate({scrollTop: $(saut).offset().top}, 1000);
+    return false;
+    });
+    });
+
+    </script>
+
+  </head>
+  <body>
+<div id="ico_menu" onclick="menu()">
+  <div id="barre1"></div>
+  <div id="barre2_2"></div>
+  <div id="barre2_1"></div>
+  <div id="barre3"></div>
+</div>
+
+
+<div id="menu">
+  <div id="ico_croix" onclick="menu_close()">
+    <div id="barre2_2"></div>
+  <div id="barre2_1"></div>
+</div>
+<a href="#top3" onclick="menu_close()"><h1>PRÉSENTATION</h1></a>
+<h3>APPARITION</h3>
+<h3>EVOLUTION</h3>
+<h3>LOGICIEL</h3>
+<h3>PRINT</h3>
+<h3>RESPONSIVE</h3>
+<h3>UTILISATION</h3>
+
+<h1>TUTORIEL</h1>
+<h3>VIDEO</h3>
+<h3>LEXIQUE</h3>
+
+<h1>RESSOURCE</h1>
+</div>
+<script type="text/javascript">
+
+function  menu(){
+  document.getElementById("menu").style.display="block";
+  document.getElementById("barre2_1").style.transition = "all 1s ease-in";
+  document.getElementById("barre2_1").style.transform = "rotate("+45+"deg)";
+  document.getElementById("barre2_1").style.backgroundColor ="white";
+  document.getElementById("barre1").style.display="none";
+  document.getElementById("barre3").style.display="none";
+  document.getElementById("barre2_2").style.transition = "all 1s ease-in";
+  document.getElementById("barre2_2").style.transform = "rotate("+135+"deg)";
+  document.getElementById("barre2_2").style.backgroundColor ="white";
+}
+
+function  menu_close(){
+  document.getElementById("menu").style.display="none";
+  document.getElementById("barre2_1").style.transition = "all 1s ease-in";
+  document.getElementById("barre2_1").style.transform = "rotate("+0+"deg)";
+  document.getElementById("barre2_1").style.backgroundColor ="#61361f";
+  document.getElementById("barre1").style.display="block";
+  document.getElementById("barre3").style.display="block";
+  document.getElementById("barre2_2").style.transition = "all 1s ease-in";
+  document.getElementById("barre2_2").style.transform = "rotate("+180+"deg)";
+  document.getElementById("barre2_2").style.backgroundColor ="#61361f";
+}
+    </script>
+
+
+    <script type="text/javascript">
+    $('#next').click(function() {
+          event.preventDefault();
+          $('#content').animate({
+            marginLeft: "-=200px"
+          }, "fast");
+       });
+    </script>
+
+
+                                                                <!-- Menu -->
+
+  <a href="#left1">gauche1</a>
+  <div id="container">
+  <div id="page1"></div>
+<div class="pageun">Container 0</div>
+<a href="#page3">page 3</a>
+<a href="#top3">Top3</a>
+<div id="page2"></div>
+
+<div class ="pagedeux">Container 1 </div>
+<a name="top2"></a>
+<a href="#top1">Top1</a>
+
+                                                                                        <!-- Page 1 -->
+
+  <div id="page2"></div>
+<div class ="pagedeux">Container 2 <a id="left1"></a> </div>
+<a name="top2"></a>
+
+</div>
+
+    <button id="prev">Précédent</button>
+    <button id="next">Suivant</button>
+                                                                                        <!-- Page 2  -->
+
+ <div id="page3"></div>
+    <div class="pagetrois">Container 3 </div>
+    <a href="#top1">Top1</a>
+    <a href="#top2">Top2</a>
+    <a name="top3"></a>
+
+
+    <div id="page4"></div>
+    <div class ="pagedeux">Container 2 </div>
+    <a name="top3"></a>
+    <a href="#top1">Top1</a>
+
+
+  </body>
+</html>
